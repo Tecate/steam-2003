@@ -1,0 +1,13 @@
+## Steam 2004 Colorset ##
+BG Light -             #4C5844
+BG Dark -              #293021
+Text Main -            #FFFFFF
+Text Important -       #C4B550
+Text Light -           #A0AA95
+Text Disabled/<hr> -   #282E22
+Text Title Unfocused - #889180
+Text Title Focused -   #FFFFFF
+Border Light -         #889180
+Border Dark -          #282E22
+Image Border -         #848484
+Uninstalled Game -     #3E4637
