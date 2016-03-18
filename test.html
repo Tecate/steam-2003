@@ -1,0 +1,14 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<input type="text" size="10" id="consoleinput" name="field">
+<input type="button" value="enter" name="loginBtn" id="loginBtn">
+<script>
+$('#consoleinput').keypress(function(event){
+  if(event.keyCode == 13){
+    $('#loginBtn').click();
+  }
+});
+
+$('#loginBtn').click(function(){
+   alert('button was "clicked"'); 
+});
+</script>
