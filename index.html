@@ -5,13 +5,36 @@
 <link rel="icon" type="image/png" href="icons/fav.png">
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="jquery-input-history.js"></script>
+  <script>
+  $(function() {
+    var availableTags = [
+      "exec",
+      "sv_cheats",
+      "sv_airaccelerate",
+      "quti",
+      "echo",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#consoleinput" ).autocomplete({
+      source: availableTags
+    });
+  });
+
+  $(function() {
+    $( "#console" ).draggable({ handle: ".titlecontainer" });
+  });
+  </script>
 </head>
 <body>
 <div id="container">
 <div id="console">
+<div class="titlecontainer">
 <img class="icon" src="icons/fav.png"><div class="title">Console</div><img class="icon win-controls" src="icons/buttons.png">
+</div>
 <div id="insetlight">
 <div id="consolelog"><pre>
 ] exec scum.systems
@@ -24,7 +47,9 @@
 </pre>
 </div>
 </div>
-<input id="consoleinput" type="text" name="field" autocomplete="off" autofocus> <input id="enter" type="button" value="submit">
+<div class="ui-widget">
+<input id="consoleinput" type="text" name="field" autocomplete="off" autofocus> <input id="enter" type="button" value="Submit" tabindex="-1">
+</div>
 </div>
 </div>
 <script>
