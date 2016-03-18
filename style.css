@@ -4,6 +4,7 @@ body
 	background-size: cover;
 	font-smooth: never;
 	-webkit-font-smoothing : none;
+	font-smooth: never;
 	font: 13px Tahoma;
 }
 
@@ -37,8 +38,16 @@ body
 	overflow-x: hidden;
 }
 
-pre { margin-left: 2px; }
+#consolelog {
+	margin-top: 0px;
+	padding: 0px;
+	margin-left: 2px;
+	margin-right: -2px;
+	font-family: monospace;
+	white-space: pre-wrap
+}
 
+/*
 #insetdark
 {
 	width: 100%;
@@ -49,7 +58,7 @@ pre { margin-left: 2px; }
 	background-color: #3E4637;	
 	overflow-y: scroll;
 }
-
+*/
 #enter {
     background: #4C5844;
     color: #FFF;
@@ -85,27 +94,8 @@ button:focus {
 	padding-left: 2px;
 }
 
-pre {
-	white-space: pre-wrap;
-}
-
 input:focus {
 	outline: none;
-}
-
-b
-{
-	color: #C4B550;
-	font-size: 10px;
-}
-
-#hr
-{
-	background-color: #282E22;
-	height: 1px;
-	width: 94%;
-	margin-left: auto;
-    margin-right: auto;
 }
 
 .title {
@@ -120,6 +110,8 @@ b
 	display: inline-block;
 }
 
+/* Scrollbar style for webkit
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 ::-webkit-scrollbar {
 	background-color: #5a6a50;
 	width: 20px;
@@ -161,6 +153,6 @@ b
 .hilight { color: #c6b652; }
 
 ::selection {
-    color: #c6b652;
-    background-color: #4c5844;
+    color: #fff;
+    background-color: #c4b550;
 }

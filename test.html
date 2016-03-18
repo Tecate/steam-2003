@@ -1,14 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Steam 03'</title>
+<link rel="icon" type="image/png" href="icons/fav.png">
+<link rel="stylesheet" type="text/css" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<input type="text" size="10" id="consoleinput" name="field">
-<input type="button" value="enter" name="loginBtn" id="loginBtn">
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="jquery-input-history.js"></script>
+</head>
+<body>
+<div id="consolelog">
+</div>
+<input id="consoleinput" type="text" name="field" autocomplete="off" autofocus>
 <script>
-$('#consoleinput').keypress(function(event){
-  if(event.keyCode == 13){
-    $('#loginBtn').click();
-  }
-});
-
-$('#loginBtn').click(function(){
-   alert('button was "clicked"'); 
-});
+    $(function () {
+        var $inp = $('#consoleinput'),
+            $outp = $('#consolelog');
+        $inp.inputHistory({
+            enter: function () {
+		$outp.append($('<div>').text($inp.val())).scrollTop($outp.height());
+            }
+        });
+    });
 </script>
+</body>
+</html>>
