@@ -1,3 +1,5 @@
+html, body { oveflow: hidden; }
+
 body
 {
 	background: #293021 url('background/green-marble.png') no-repeat center center fixed;
@@ -6,6 +8,7 @@ body
 	-webkit-font-smoothing : none;
 	font-smooth: never;
 	font: 13px Tahoma, sans-serif;
+	overflow: hidden;
 }
 
 #container { width: 100%; }
@@ -23,13 +26,13 @@ body
 	box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
 }
 
-.titlecontainer {
-	background: #000;
-	width: 100%;
-}
-
-.title {
-	width: 85%;
+.dragbar {
+	width: 88%;
+	height: 27px;
+	position: absolute;
+	top: 0px;
+	left: 0px
+	z-index: 9000;
 }
 
 #insetlight
@@ -187,8 +190,15 @@ input:focus {
         color: #dedfd6;
 	font-family: monospace;
 	padding-left: 4px;
+	padding-right: 4px;
 	border-style: solid;
 	border-width: 1px;
+	max-width: 200px;
+}
+
+.ui-menu-item:hover {
+    color: #fff;
+    background-color: #c4b550;
 }
 
 .ui-helper-hidden-accessible {
