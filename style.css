@@ -15,6 +15,37 @@ a:link, a:visited { color: #c6b652; text-decoration: none; }
 a:hover { background: #3E4637; color: #c6b652; }
 a:active { text-decoration: none; }
 
+h3 {
+	font: 10px Tahoma, sans-serif;
+	margin: 0px;
+	font-weight: normal;
+	color: #C4B550;
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #282E22;
+	text-transform: uppercase;
+	padding-left: 10px;
+}
+
+ul {
+	list-style-type: none;
+	margin-left: -35px;
+	margin-top: 0px;
+}
+
+li {
+	margin-left: 0px;
+	line-height: 19px;
+	height: 19px;
+	display: block;
+}
+
+li:hover {
+	background: #282e22;
+}
 
 /* Windows
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -65,7 +96,7 @@ a:active { text-decoration: none; }
 }
 
 .dragbar {
-	width: 88%;
+	width: calc(100% - 48px);
 	height: 27px;
 	position: absolute;
 	top: 0px;
@@ -73,16 +104,27 @@ a:active { text-decoration: none; }
 	z-index: 9000;
 }
 
-.resizer {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	z-index: 9000;
-	background: rgba(0,0,0,0.3);
-	width: 16px;
-	height: 16px;
+
+/* Library
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#librarydisplay {
+        width: 100%;
+        height: calc(100% - 27px);
+        color: #dedfd6;
+        border-style: inset;
+        border-color: #282E22 #889180 #889180 #282E22;
+        /* border-color: #282E22 #889180 #889180 #282E22; outset*/
+        border-width: 1px;
+        background-color: #3E4637; /* dark: #3E4637 */
+        margin-bottom: 5px;
+        display: inline-block;
+        overflow-x: hidden;
 }
 
+.gameicon {
+	margin-right: 5px;
+	vertical-align: middle;
+}
 
 /* Console
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -226,3 +268,6 @@ input:focus { outline: none; }
 .ui-helper-hidden-accessible {
 	display: none;
 }
+
+
+

@@ -3,11 +3,11 @@
 <head>
 <title>Steam 03'</title>
 <link rel="icon" type="image/png" href="icons/fav.png">
-<link rel="stylesheet" type="text/css" href="style.css">
 <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="jquery-input-history.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div id="console" class="steam-window">
@@ -29,6 +29,27 @@
 
   <div class="ui-widget">
     <input tabindex="1" id="consoleinput" type="text" name="field" autocomplete="off" autofocus> <input id="enter" type="button" value="Submit" tabindex="2">
+  </div>
+</div>
+
+<div id="library" class="steam-window">
+  <div class="dragbar"></div>
+  <img class="icon" src="icons/fav.png"><div class="title">Library</div><img class="icon win-controls" src="icons/buttons.png">
+  <div id="librarydisplay">
+    <h3>List of stuff</h3>
+    <ul>
+	<li><img class="gameicon" src="icons/hl.png"> Half Life</li>
+	<li><img class="gameicon" src="icons/cs16.png"> Counter Strike 1.6</li>
+	<li><img class="gameicon" src="icons/dod16trans.png"> Day of Defeat</li>
+        <li><img class="gameicon" src="icons/sc16.gif"> Sven Co-op</li>
+    </ul>
+    <h3>List of stuff</h3>
+    <ul>
+        <li><img class="gameicon" src="icons/hl.png"> Half Life</li>
+        <li><img class="gameicon" src="icons/cs16.png"> Counter Strike 1.6</li>
+        <li><img class="gameicon" src="icons/dod16trans.png"> Day of Defeat</li>
+        <li><img class="gameicon" src="icons/sc16.gif"> Sven Co-op</li>
+    </ul>
   </div>
 </div>
 
@@ -72,6 +93,8 @@
   $(function() {
     $( "#console" ).draggable({ handle: ".dragbar" });
     $( "#console" ).resizable();
+    $( "#library" ).draggable({ handle: ".dragbar" });
+    $( "#library" ).resizable();
   });
 </script>
 </body>
