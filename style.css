@@ -11,8 +11,13 @@ body
 	overflow: hidden;
 }
 
-#container { width: 100%; }
+a:link, a:visited { color: #c6b652; text-decoration: none; }
+a:hover { background: #3E4637; color: #c6b652; }
+a:active { text-decoration: none; }
 
+
+/* Windows
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 #console
 {
 	border-style: outset;
@@ -26,6 +31,26 @@ body
 	box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
 }
 
+
+/* Top window controls
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.icon {
+        float: left;
+        display: inline-block;
+}
+
+.title {
+        margin-bottom: 6px;
+        margin-left: 5px;
+        float: left;
+        display: inline-block;
+}
+
+ .win-controls {
+        display: inline-block;
+        float: right;
+}
+
 .dragbar {
 	width: 88%;
 	height: 27px;
@@ -35,15 +60,18 @@ body
 	z-index: 9000;
 }
 
-#insetlight
-{
+
+/* Console
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#consoledisplay {
 	width: 100%;
 	height: calc(100% - 53px);
 	color: #dedfd6;
 	border-style: inset;
 	border-color: #282E22 #889180 #889180 #282E22;
+	/* border-color: #282E22 #889180 #889180 #282E22; outset*/
 	border-width: 1px;
-	background-color: #4C5844;	
+	background-color: #4C5844; /* dark: #3E4637 */
 	margin-bottom: 5px;
 	display: inline-block;
 	overflow-y: scroll;
@@ -59,21 +87,14 @@ body
 	white-space: pre-wrap
 }
 
-/*
-#insetdark
-{
-	width: 100%;
-	height: 90%;
-	border-style: inset;
-	border-color: #282E22 #889180 #889180 #282E22;
-	border-width: 1px;
-	background-color: #3E4637;	
-	overflow-y: scroll;
-}
-*/
+.hilight { color: #c6b652; }
+
+
+/* Console controls
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 #enter {
-    background: #4C5844;
-    color: #FFF;
+	background: #4C5844;
+	color: #FFF;
 	border-style: outset;
 	border-width: 1px;
 	border-color: #889180 #282E22 #282E22 #889180;
@@ -82,21 +103,17 @@ body
 	font: 13px Tahoma;
 }
 
-button:active {
+#enter:active {
 	outline: none;
         box-shadow: 0 0 0 #000000;
         border-style: inset;
 	color: #c4b550;
         border-color: #282E22 #889180 #889180 #282E22;
         border-width: 1px;
+	background-color: #3E4637;
 }
 
-button:focus {
-	outline: none;
-}
-
-#consoleinput
-{
+#consoleinput {
 	border-style: inset;
 	border-color: #282E22 #889180 #889180 #282E22;
 	border-width: 1px;
@@ -106,21 +123,8 @@ button:focus {
 	padding-left: 2px;
 }
 
-input:focus {
-	outline: none;
-}
+input:focus { outline: none; }
 
-.title {
-	margin-bottom: 6px;
-	margin-left: 5px;
-	float: left;
-	display: inline-block;
-}
-
-.icon {
-	float: left;
-	display: inline-block;
-}
 
 /* Scrollbar style for webkit
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -155,20 +159,16 @@ input:focus {
         border-style: outset;
         border-width: 1px;
         border-color: #889180 #282E22 #282E22 #889180;
-
 }
- .win-controls {
-	display: inline-block;
-	float: right;
-}
-
-.hilight { color: #c6b652; }
 
 ::selection {
     color: #fff;
     background-color: #c4b550;
 }
 
+
+/* Autocomplete styling
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .ui-menu .ui-menu-item a {
 	width: 200px;
         color: #dedfd6;
