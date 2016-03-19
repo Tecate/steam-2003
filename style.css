@@ -43,8 +43,24 @@ li {
 	display: block;
 }
 
+li a:link, li a:visited {
+	color: #fff;
+	background-color:  #3E4637;	
+}
+
+li:hover a {
+        background-color: #282e22;
+        color: #fff;
+}
+
 li:hover {
-	background: #282e22;
+        background-color: #282e22;
+        color: #c6b652;
+}
+
+li:hover a:hover {
+	background-color: #282e22;
+	color: #c6b652;
 }
 
 /* Windows
@@ -57,6 +73,7 @@ li:hover {
         color: #FFFFFF;
         padding: 5px;
         box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+	position: absolute;
 }
 
 #console
@@ -73,8 +90,13 @@ li:hover {
         height: 350px;
         min-width: 150px;
         min-height: 150px;
+	top: 50px;
+	left: 450px;
 }
 
+#update {
+	display: none;
+}
 
 /* Top window controls
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

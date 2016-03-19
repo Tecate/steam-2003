@@ -3,10 +3,10 @@
 <head>
 <title>Steam 03'</title>
 <link rel="icon" type="image/png" href="icons/fav.png">
-<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="jquery-input-history.js"></script>
+<link rel="stylesheet" type="text/css" href="resize.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -36,22 +36,36 @@
   <div class="dragbar"></div>
   <img class="icon" src="icons/fav.png"><div class="title">Library</div><img class="icon win-controls" src="icons/buttons.png">
   <div id="librarydisplay">
-    <h3>List of stuff</h3>
+    <h3>Servers</h3>
     <ul>
-	<li><img class="gameicon" src="icons/hl.png"> Half Life</li>
-	<li><img class="gameicon" src="icons/cs16.png"> Counter Strike 1.6</li>
-	<li><img class="gameicon" src="icons/dod16trans.png"> Day of Defeat</li>
-        <li><img class="gameicon" src="icons/sc16.gif"> Sven Co-op</li>
+	<li><a href="#"><img class="gameicon" src="icons/hl.png"> Half Life</li></a>
+	<li><a href="#"><img class="gameicon" src="icons/cs16.png"> Counter Strike 1.6</li></a>
+	<li><a href="#"><img class="gameicon" src="icons/dod16trans.png"> Day of Defeat</li></a>
+        <li><a href="#"><img class="gameicon" src="icons/sc16.gif"> Sven Co-op</li></a>
     </ul>
-    <h3>List of stuff</h3>
+    <h3>Good shit</h3>
     <ul>
-        <li><img class="gameicon" src="icons/hl.png"> Half Life</li>
-        <li><img class="gameicon" src="icons/cs16.png"> Counter Strike 1.6</li>
-        <li><img class="gameicon" src="icons/dod16trans.png"> Day of Defeat</li>
-        <li><img class="gameicon" src="icons/sc16.gif"> Sven Co-op</li>
+        <li><a href="#"><img class="gameicon" src="icons/abraxas-fav.png"> abraxas.xyz</li></a>
+        <li><a href="#"><img class="gameicon" src="icons/abraxas-fav.png"> hellco.net</li></a>
+        <li><a href="#"><img class="gameicon" src="icons/abraxas-fav.png"> dongers.me</li></a>
     </ul>
   </div>
 </div>
+<div id="update" class="steam-window">
+<div class="dragbar"></div>
+<img src="icons/update.gif">
+</div>
+<script>
+  function runCmds(cmd) {
+    if (cmd == "date") {
+      var timedate = new Date();
+      $('#consolelog').append(timedate);      
+    };
+    if (cmd ^= "echo") {
+      $('#consolelog').append(cmd.subString(5));
+    }
+  }
+</script>
 
 <script> <!--History stuff-->
   $(function () {
@@ -60,6 +74,7 @@
       $inp.inputHistory({
         enter: function () {
           $outp.append($('<div>').text("] " + $inp.val())).scrollTop($outp.height());
+          runCmds($('#consoleinput').val());
         }
     });
   });
@@ -89,10 +104,12 @@
       source: availableTags
     });
   });
+</script>
 
+<script> <!--Window movement stuff-->
   $(function() {
-    $( "#console" ).draggable({ handle: ".dragbar" });
-    $( "#console" ).resizable();
+    $( ".steam-window" ).draggable({ handle: ".dragbar", stack: ".steam-window div" });
+    $( ".steam-window" ).resizable();
     $( "#library" ).draggable({ handle: ".dragbar" });
     $( "#library" ).resizable();
   });
