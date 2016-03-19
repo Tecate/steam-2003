@@ -4,12 +4,13 @@
 <title>Steam 03'</title>
 <link rel="icon" type="image/png" href="icons/fav.png">
 <link rel="stylesheet" type="text/css" href="style.css">
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="jquery-input-history.js"></script>
 </head>
 <body>
-<div id="console">
+<div id="console" class="steam-window">
 
   <div class="dragbar"></div>
   <img class="icon" src="icons/fav.png"><div class="title">Console</div><img class="icon win-controls" src="icons/buttons.png">
@@ -27,9 +28,8 @@
   </div>
 
   <div class="ui-widget">
-    <input tabindex="1" id="consoleinput" type="text" name="field" autocomplete="off" autofocus> <input id="enter" type="button" value="Submit" tabindex="-1">
+    <input tabindex="1" id="consoleinput" type="text" name="field" autocomplete="off" autofocus> <input id="enter" type="button" value="Submit" tabindex="2">
   </div>
-
 </div>
 
 <script> <!--History stuff-->
@@ -71,6 +71,7 @@
 
   $(function() {
     $( "#console" ).draggable({ handle: ".dragbar" });
+    $( "#console" ).resizable();
   });
 </script>
 </body>

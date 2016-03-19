@@ -18,17 +18,30 @@ a:active { text-decoration: none; }
 
 /* Windows
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.steam-window {
+        border-style: outset;
+        border-width: 1px;
+        border-color: #889180 #282E22 #282E22 #889180;
+        background-color: #4C5844;
+        color: #FFFFFF;
+        padding: 5px;
+        box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+}
+
 #console
 {
-	border-style: outset;
-	border-width: 1px;
-	border-color: #889180 #282E22 #282E22 #889180;
-	background-color: #4C5844;
-	color: #FFFFFF;
-	padding: 5px;
 	width: 400px;
 	height: 500px;
-	box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+	min-width: 150px;
+	min-height: 150px;
+}
+
+#library
+{
+        width: 200px;
+        height: 350px;
+        min-width: 150px;
+        min-height: 150px;
 }
 
 
@@ -58,6 +71,16 @@ a:active { text-decoration: none; }
 	top: 0px;
 	left: 0px
 	z-index: 9000;
+}
+
+.resizer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 9000;
+	background: rgba(0,0,0,0.3);
+	width: 16px;
+	height: 16px;
 }
 
 
@@ -100,7 +123,6 @@ a:active { text-decoration: none; }
 	border-color: #889180 #282E22 #282E22 #889180;
 	display: inline-block;
 	float: right;
-	font: 13px Tahoma;
 }
 
 #enter:active {
