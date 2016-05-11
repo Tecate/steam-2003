@@ -38,9 +38,14 @@ ul {
 
 li {
 	margin-left: 0px;
+	padding-left: 2px;
 	line-height: 19px;
-	height: 19px;
+	height: 20px;
 	display: block;
+}
+
+li img {
+	padding-bottom: 1px;
 }
 
 li a:link, li a:visited {
